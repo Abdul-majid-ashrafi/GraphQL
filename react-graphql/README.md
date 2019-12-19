@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I follow from this link its very helpfull(https://medium.com/codingthesmartway-com-blog/getting-started-with-react-and-graphql-395311c1e8da).
 
 ## Available Scripts
 
