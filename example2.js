@@ -34,7 +34,7 @@ const getCourse = (args) => {
         let id = args.id;
         return coursesData.filter(course => {
             return course.id === id;
-        })
+        })[0]
     } else {
         return coursesData;
     }
