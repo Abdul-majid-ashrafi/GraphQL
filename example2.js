@@ -1,7 +1,9 @@
 const express = require('express');
 const graphQLHTTP = require('express-graphql'); // for graphql server
 const { graphql, buildSchema } = require('graphql'); //we are importing some tools and methods from graphql module 
-
+const bodyParser = require('body-parser');
+const cors = require('cors')
+const port = 4000;
 const coursesData = [
     {
         id: 1,
@@ -80,7 +82,7 @@ type Query {
 
 // // Create an express server and a GraphQL endpoint
 const app = express();
-app.use('/graphql', graphQLHTTP({
+app.use('/graphql', cors(), bodyParser.json(), graphQLHTTP({
     schema: schema,
     rootValue: root,
     graphiql: true
@@ -99,4 +101,4 @@ app.use('/graphql', graphQLHTTP({
 // })
 
 
-app.listen(4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
+app.listen(port, () => console.log(`Express GraphQL Server Now Running On localhost:${port}/graphql`));
